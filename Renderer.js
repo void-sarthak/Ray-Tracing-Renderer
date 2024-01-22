@@ -166,7 +166,7 @@ float shadowColor(Sphere sphere[4], float t, Ray ray, int index)
 
   for(int i = 0; i < sphere.length(); i++)
   {
-    float t = intersectSphere(shadowRay, sphere[i]);
+    float t = intersectSphere(shadowRay, sphere[i]) - 0.03;
     if(t >= 0.0)
     {
       return 1.0;
@@ -185,8 +185,8 @@ void main()
   sphere[0].color = vec3(0.8, 0.1, 0.2);
   sphere[0].shine = 32.0;
 
-  sphere[1].center = vec3(1.5, 1.5, 0.5);
-  sphere[1].radius = 0.5;
+  sphere[1].center = vec3(1.5, 0.15, 0.8);
+  sphere[1].radius = 0.7;
   sphere[1].color = vec3(0.1, 0.8, 0.2);
   sphere[1].shine = 50.0;
 
